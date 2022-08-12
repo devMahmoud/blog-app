@@ -45,6 +45,9 @@ gem 'bootsnap', require: false
 # Rubocup
 gem 'rubocop', '>= 1.0', '< 2.0'
 
+# RSpec
+gem 'rspec-rails', '~> 4.0.0.beta2'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
