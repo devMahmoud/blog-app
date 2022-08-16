@@ -34,5 +34,4 @@ RSpec.describe 'users', type: :request do
       expect(response.body).to include 'Profile page for a given user'
     end
   end
-  
 end

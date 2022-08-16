@@ -34,5 +34,4 @@ RSpec.describe 'posts', type: :request do
       expect(response.body).to include 'specific post for a given user'
     end
   end
-  
 end
