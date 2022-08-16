@@ -47,6 +47,7 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 
 # RSpec
 gem 'rspec-rails', '~> 4.0.0.beta2'
+gem 'rails-controller-testing'
 
 # Use Sass to process CSS
 # gem "sassc-rails"
