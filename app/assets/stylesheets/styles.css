@@ -1,0 +1,45 @@
+.user-card{
+  display: flex;
+  margin-bottom: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+}
+
+.user-content{
+  border: 1px solid gray;
+  width: 50%;
+  padding: 0 1rem;
+}
+
+.bio {
+  border: 1px solid gray;
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+}
+
+.post {
+  border: 1px solid gray;
+  margin-bottom: 1rem;
+}
+
+.post-header {
+  border: 1px solid gray;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.post-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-comments {
+  border: 1px solid gray;
+  padding: 1rem;
+}
