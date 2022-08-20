@@ -1,7 +1,14 @@
 <%= stylesheet_link_tag "styles" %>
 <div class="post-header">
   <div class="post-title">
-    <p><%= @post.title %> by <%= @post.author.name%> </p>
+    <div>
+    <p><%= @post.title %> by <%= @post.author.name%></p>
+      <%=form_with :url => user_post_likes_path(@user, @post), :method => :post, :class => 'new-like' do |f|%>
+      <%= f.button do %>
+        Like
+      <% end %>
+    <%end%>
+    </div>
     <p>comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %></p>
   </div>
   <p><%= @post.text %></p>
@@ -10,4 +17,5 @@
   <% @comments.each do |comment| %>
     <p><%= @post.author.name%> : <%= comment.text %></p>
   <% end %>
+  <button type="button"><%= link_to 'Add Comment', new_user_post_comment_path(@user.id, @post.id) %></button>
 </div>
