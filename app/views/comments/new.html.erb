@@ -1,0 +1,5 @@
+<h3>Comments Form:</h3>
+<%=form_with model: @comment, :url => user_post_comments_path(user_id: @user, post_id: @post), :method => :post do |f|%>
+  <%=f.text_field :text, placeholder: 'Comment'%>
+  <%=f.submit 'Comment'%>
+<%end%>
