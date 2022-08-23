@@ -1,12 +1,12 @@
 class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
-    @posts = @user.posts
+    @posts = @user.posts.includes(:author)
   end
 
   def show
     @post = Post.find(params[:id])
-    @comments = Comment.where post: @post
+    @comments = @post.comments.includes(:author)
     @user = current_user
   end
 
@@ -18,7 +18,6 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.author = current_user
-    Rails.logger.debug("My post: #{@post.inspect}")
     @post.save
     redirect_to user_posts_path(current_user)
   end
