@@ -9,13 +9,13 @@
       <% end %>
     <%end%>
     </div>
-    <p>comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %></p>
+    <p>Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %></p>
   </div>
   <p><%= @post.text %></p>
 </div>
 <div class="post-comments">
   <% @comments.each do |comment| %>
-    <p><%= @post.author.name%> : <%= comment.text %></p>
+    <p><%= comment.author.name%> : <%= comment.text %></p>
   <% end %>
   <button type="button"><%= link_to 'Add Comment', new_user_post_comment_path(@user.id, @post.id) %></button>
 </div>
