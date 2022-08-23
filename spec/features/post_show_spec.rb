@@ -28,7 +28,7 @@ RSpec.describe 'Users index page', type: :feature do
       expect(page).to have_content 'Likes:'
       expect(@post.likes_counter).to eq(0)
     end
-  
+
     it 'the posts body should be showed.' do
       expect(page).to have_content('post1')
     end

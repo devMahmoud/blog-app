@@ -19,10 +19,11 @@ RSpec.describe 'Posts index page', type: :feature do
       expect(page).to have_content(@user.name)
     end
 
-    it "I can see the number of posts the user has written." do
+    it 'I can see the number of posts the user has written.' do
       expect(page).to have_content("Number of posts: #{@user.posts_counter}")
     end
-
+  end
+  context 'Posts list' do
     it "I can see a post's title." do
       expect(page).to have_content(@post.title)
     end
@@ -31,12 +32,11 @@ RSpec.describe 'Posts index page', type: :feature do
       expect(page).to have_content('post1')
     end
 
-    it "I can see the first comments on a post." do
+    it 'I can see the first comments on a post.' do
       expect(page).to have_content 'my comment'
     end
-  
 
-    it "I can see how many comments a post has." do
+    it 'I can see how many comments a post has.' do
       expect(page).to have_content('Comments:')
       expect(@comment.post.comments_counter).to eq(1)
     end
