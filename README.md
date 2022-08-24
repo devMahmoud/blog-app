@@ -36,6 +36,12 @@ To get a local copy on this project on your machine follow these steps
 - GitHub: [@devMahmoud](https://github.com/devMahmoud)
 - LinkedIn: [Mahmoud Makhlouf](https://www.linkedin.com/in/mahmoud-abdelkader-makhlouf/)
 
+👤 **Emilia Zambrano**
+
+- GitHub: [@emiliazm](https://github.com/emiliazm)
+- Twitter: [@emilia_zm](https://twitter.com/emilia_zm)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/emiliazm/)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
