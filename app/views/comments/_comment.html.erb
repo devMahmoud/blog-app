@@ -1,0 +1,5 @@
+
+  <p><%= comment.author.name%> : <%= comment.text %></p>
+  <% if can? :delete, comment %>
+    <%= button_to "Delete", user_post_comment_path(comment.author, comment.post, comment), method: :delete %>
+  <% end %>
