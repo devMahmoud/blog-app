@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  # load_and_authorize_resource
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts.includes(:author)
@@ -20,6 +21,11 @@ class PostsController < ApplicationController
     @post.author = current_user
     @post.save
     redirect_to user_posts_path(current_user)
+  end
+
+  def destroy
+    Post.destroy params[:id]
+    redirect_to user_posts_url(user_id: params[:user_id])
   end
 
   private

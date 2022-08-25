@@ -14,8 +14,11 @@
   <p><%= @post.text %></p>
 </div>
 <div class="post-comments">
-  <% @comments.each do |comment| %>
-    <p><%= comment.author.name%> : <%= comment.text %></p>
+  <% @comments.includes([:post]).each do |comment| %>
+  <%= render 'comments/comment', comment: comment %>
   <% end %>
   <button type="button"><%= link_to 'Add Comment', new_user_post_comment_path(@user.id, @post.id) %></button>
+  <% if can? :delete, @post %>
+  <%= button_to 'Delete Post', user_post_path(@post.author, @post), method: :delete %>
+  <% end %>
 </div>

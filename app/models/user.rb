@@ -4,6 +4,17 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :confirmable
+
+  ROLES = %w[admin user].freeze
+
+  def admin?
+    is? ROLES[0]
+  end
+
+  def is?(requested_role)
+    role == requested_role
+  end
+
   has_many :comments, foreign_key: 'author_id'
   has_many :posts, foreign_key: 'author_id'
   has_many :likes, foreign_key: 'author_id'
