@@ -5,14 +5,14 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :confirmable
 
-  Roles = [ 'admin' , 'user' ]
+  ROLES = %w[admin user].freeze
 
   def admin?
-    is? Roles[0]
+    is? ROLES[0]
   end
 
-  def is?( requested_role )
-    self.role == requested_role
+  def is?(requested_role)
+    role == requested_role
   end
 
   has_many :comments, foreign_key: 'author_id'
