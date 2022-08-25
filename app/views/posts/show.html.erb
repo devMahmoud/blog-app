@@ -16,9 +16,12 @@
 <div class="post-comments">
   <% @comments.each do |comment| %>
     <p><%= comment.author.name%> : <%= comment.text %></p>
+    <% if can? :delete, comment %>
+      <%= button_to "Delete", user_post_comment_path(comment.author, comment.post, comment), method: :delete %>
+    <% end %>
   <% end %>
   <button type="button"><%= link_to 'Add Comment', new_user_post_comment_path(@user.id, @post.id) %></button>
   <% if can? :delete, @post %>
-  <%= button_to 'Delete Post', user_post_path(@post.author, @post), method: :delete, data: {confirm: 'Are you sure?'} %>
+  <%= button_to 'Delete Post', user_post_path(@post.author, @post), method: :delete %>
   <% end %>
 </div>
