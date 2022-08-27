@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :confirmable
 
+  after_create :generate_api_token
+
   ROLES = %w[admin user].freeze
 
   def admin?
@@ -24,5 +26,12 @@ class User < ApplicationRecord
 
   def recent_posts
     posts.order(created_at: :desc).limit(3)
+  end
+
+  private
+
+  def generate_api_token
+    self.api_token = Devise.friendly_token
+    save
   end
 end
